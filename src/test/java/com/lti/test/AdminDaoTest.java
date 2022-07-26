@@ -27,7 +27,7 @@ public class AdminDaoTest {
 
 	@Test
 	public void adminLogin() {
-		Boolean loginResult = dao.adminLogin("admin", "adm");
+		Boolean loginResult = dao.adminLogin("admin", "admin");
 		if (loginResult != true) {
 			System.out.println("Invalid Credentials");
 		} else {
