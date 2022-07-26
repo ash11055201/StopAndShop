@@ -65,7 +65,7 @@ public class RetailerDaoTest {
 	
 	@Test
 	public void loginTest() {
-		Retailer r = dao.login(1010, "123");
+		Retailer r = dao.login(1013, "1230");
 		
 		if(r==null) {
 			System.out.println("Invalid credentials");
@@ -83,10 +83,10 @@ public class RetailerDaoTest {
 	@Test
 	public void updateProfileTest() {
 		Retailer r = new Retailer();
-		r.setRetailerId(1006);
+		r.setRetailerId(1012);
 		r.setRetailerName("OPPO");
 		r.setPassword("123");
-		r.setEmail("oppo1@gmail.com");
+		r.setEmail("oppo@gmail.com");
 		r.setPhoneNo("8765679875");
 		r.setGstnNo("gstn9820");
 		r.setApproved(false);

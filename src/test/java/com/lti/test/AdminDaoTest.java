@@ -11,7 +11,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.lti.dao.AdminDao;
-import com.lti.entity.Admin;
 import com.lti.entity.Retailer;
 
 public class AdminDaoTest {
@@ -27,7 +26,7 @@ public class AdminDaoTest {
 
 	@Test
 	public void adminLogin() {
-		Boolean loginResult = dao.adminLogin("admin", "admin");
+		Boolean loginResult = dao.adminLogin("admin","admin");
 		if (loginResult != true) {
 			System.out.println("Invalid Credentials");
 		} else {
@@ -38,15 +37,15 @@ public class AdminDaoTest {
 	
 	@Test
 	public void viewRetailerDetails() {
-		Retailer r=dao.viewRetailerDetails(1006);
+		Retailer r=dao.viewRetailerDetails(1012);
 		assertNotNull(r);
 		System.out.println(r.getRetailerdocs().toString());
 	}
 
 	@Test
 	public void viewRetailers() {
-		List<Retailer> retailers = dao.approvedRetailers();
-//		List<Retailer> retailers = dao.nonApprovedRetailers();
+//		List<Retailer> retailers = dao.approvedRetailers();
+		List<Retailer> retailers = dao.nonApprovedRetailers();
 		if(retailers.isEmpty())
 			System.out.println("No Record Found");
 		else
@@ -56,7 +55,7 @@ public class AdminDaoTest {
 	
 	@Test
 	public void approveRetailer() {
-		Retailer r=dao.searchRetailer(1010);
+		Retailer r=dao.searchRetailer(1013);
 		if(r!=null) {
 			r.setApproved(true);
 			System.out.println(dao.approveReailer(r));
@@ -67,7 +66,7 @@ public class AdminDaoTest {
 	
 	@Test
 	public void removeTest() {
-		dao.removeRetailer(1006);
+		dao.removeRetailer(1013);
 	}
 	
 	
