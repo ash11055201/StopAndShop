@@ -1,9 +1,11 @@
 package com.lti.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -21,6 +23,16 @@ public class Retailer {
 	String phoneNo;
 	boolean isApproved;
 	String GstnNo;
+	
+	@OneToOne(mappedBy = "retailer",cascade = CascadeType.ALL)
+	RetailerDocs retailerdocs;
+	
+	public RetailerDocs getRetailerdocs() {
+		return retailerdocs;
+	}
+	public void setRetailerdocs(RetailerDocs retailerdocs) {
+		this.retailerdocs = retailerdocs;
+	}
 	public int getRetailerId() {
 		return retailerId;
 	}
@@ -62,6 +74,12 @@ public class Retailer {
 	}
 	public void setGstnNo(String gstnNo) {
 		GstnNo = gstnNo;
+	}
+	@Override
+	public String toString() {
+		return "Retailer [retailerId=" + retailerId + ", retailerName=" + retailerName + ", password=" + password
+				+ ", email=" + email + ", phoneNo=" + phoneNo + ", isApproved=" + isApproved + ", GstnNo=" + GstnNo
+				+ "]";
 	}
 	
 
