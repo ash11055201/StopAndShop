@@ -12,7 +12,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tbl_category")
+@Table(name = "tbl_cartItems")
 public class Category {
 	@Id
 	@SequenceGenerator(name = "category_seq", initialValue = 101, allocationSize = 1)

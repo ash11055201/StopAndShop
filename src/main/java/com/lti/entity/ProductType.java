@@ -30,4 +30,38 @@ public class ProductType {
 
 	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
 	List<ProductType> productType;
+
+	public int getProductTypeId() {
+		return productTypeId;
+	}
+
+	public void setProductTypeId(int productTypeId) {
+		this.productTypeId = productTypeId;
+	}
+
+	public String getProductTypeName() {
+		return productTypeName;
+	}
+
+	public void setProductTypeName(String productTypeName) {
+		this.productTypeName = productTypeName;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public List<ProductType> getProductType() {
+		return productType;
+	}
+
+	public void setProductType(List<ProductType> productType) {
+		this.productType = productType;
+	}
+	
+	
 }
