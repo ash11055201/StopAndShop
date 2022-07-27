@@ -42,7 +42,7 @@ public class RetailerDaoTest {
 		Retailer r = new Retailer();
 		r.setRetailerName("OPPO");
 		r.setPassword("123");
-		r.setEmail("oppin@gmail.com");
+		r.setEmail("oppin@gail.com");
 		r.setPhoneNo("8765679875");
 		r.setGstnNo("gstn9820");
 		r.setApproved(false);

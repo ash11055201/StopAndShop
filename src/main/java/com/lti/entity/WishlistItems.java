@@ -17,8 +17,8 @@ public class WishlistItems {
 	@Id
 	@SequenceGenerator(name = "wishlistitems_seq", initialValue = 1, allocationSize = 1)
 	@GeneratedValue(generator = "wishlistitems_seq", strategy = GenerationType.SEQUENCE)
-	int wishlistId;
-	String productId;
+	int wishlistitemId;
+	int productId;
 	String quantity;
 
 
@@ -26,23 +26,23 @@ public class WishlistItems {
 	@JoinColumn(name = "wishlistId")
 	Wishlist wishlist;
 	
-	@OneToOne
-	@JoinColumn(name="productId")
-	Product product;
+//	@OneToOne
+//	@JoinColumn(name="productId")
+//	Product product;
 
-	public int getWishlistId() {
-		return wishlistId;
-	}
+//	public int getWishlistId() {
+//		return wishlistId;
+//	}
+//
+//	public void setWishlistId(int wishlistId) {
+//		this.wishlistId = wishlistId;
+//	}
 
-	public void setWishlistId(int wishlistId) {
-		this.wishlistId = wishlistId;
-	}
-
-	public String getProductId() {
+	public int getProductId() {
 		return productId;
 	}
 
-	public void setProductId(String productId) {
+	public void setProductId(int productId) {
 		this.productId = productId;
 	}
 
@@ -62,13 +62,13 @@ public class WishlistItems {
 		this.wishlist = wishlist;
 	}
 
-	public Product getProduct() {
-		return product;
-	}
-
-	public void setProduct(Product product) {
-		this.product = product;
-	}
+//	public Product getProduct() {
+//		return product;
+//	}
+//
+//	public void setProduct(Product product) {
+//		this.product = product;
+//	}
 	
 	
 

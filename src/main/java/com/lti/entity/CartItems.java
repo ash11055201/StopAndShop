@@ -1,5 +1,6 @@
 package com.lti.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,50 +18,51 @@ public class CartItems {
 	@Id
 	@SequenceGenerator(name = "cartItems_seq", initialValue = 1, allocationSize = 1)
 	@GeneratedValue(generator = "cartItems_seq", strategy = GenerationType.SEQUENCE)
-	int itemId;
-	String productId;
+	int cartItemId;
+	int productId;
 	String quantity;
+	
 
 
 	@ManyToOne
 	@JoinColumn(name = "cart_id")
 	Cart cart;
 	
-	@OneToOne
-	@JoinColumn(name="productId")
-	Product product;
+//	@OneToOne
+//	@JoinColumn(name="productId")
+//	Product product;
 
 
-	public int getItemId() {
-		return itemId;
+	public int getcartItemId() {
+		return cartItemId;
 	}
 
 
 	public void setItemId(int itemId) {
-		this.itemId = itemId;
+		this.cartItemId = itemId;
 	}
 
 
-	public String getProductId() {
+	public int getProductId() {
 		return productId;
 	}
 
 
-	public void setProductId(String productId) {
+	public void setProductId(int productId) {
 		this.productId = productId;
 	}
 	
 	
 
-
-	public Product getProduct() {
-		return product;
-	}
-
-
-	public void setProduct(Product product) {
-		this.product = product;
-	}
+//
+//	public Product getProduct() {
+//		return product;
+//	}
+//
+//
+//	public void setProduct(Product product) {
+//		this.product = product;
+//	}
 
 
 	public String getQuantity() {

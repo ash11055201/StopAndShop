@@ -1,7 +1,9 @@
 package com.lti.service;
 
+import com.lti.dto.RetailerSignupDto;
+
 public interface RetailerService {
-//	retailerLogin(int retailerId,String,password);
-//	signup(Retailer retailer);
+	boolean retailerLogin(int retailerId,String password);
+	String signup(RetailerSignupDto rdto);
 	
 }

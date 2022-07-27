@@ -23,13 +23,22 @@ public class ProductType {
 	int productTypeId;
 
 	String productTypeName;
+	String productImage;
+
+	public String getProductImage() {
+		return productImage;
+	}
+
+	public void setProductImage(String productImage) {
+		this.productImage = productImage;
+	}
 
 	@ManyToOne
 	@JoinColumn(name = "categoryId")
 	Category category;
 
-	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-	List<ProductType> productType;
+	@OneToMany(mappedBy = "productType", cascade = CascadeType.ALL)
+	List<Product> products;
 
 	public int getProductTypeId() {
 		return productTypeId;
@@ -55,13 +64,14 @@ public class ProductType {
 		this.category = category;
 	}
 
-	public List<ProductType> getProductType() {
-		return productType;
+	public List<Product> getProducts() {
+		return products;
 	}
 
-	public void setProductType(List<ProductType> productType) {
-		this.productType = productType;
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
+
 	
 	
 }
