@@ -37,8 +37,8 @@ public class ProductType {
 	@JoinColumn(name = "categoryId")
 	Category category;
 
-	@OneToMany(mappedBy = "productType", cascade = CascadeType.ALL)
-	List<Product> products;
+//	@OneToMany(mappedBy = "productType", cascade = CascadeType.ALL)
+//	List<Product> products;
 
 	public int getProductTypeId() {
 		return productTypeId;
@@ -64,13 +64,13 @@ public class ProductType {
 		this.category = category;
 	}
 
-	public List<Product> getProducts() {
-		return products;
-	}
-
-	public void setProducts(List<Product> products) {
-		this.products = products;
-	}
+//	public List<Product> getProducts() {
+//		return products;
+//	}
+//
+//	public void setProducts(List<Product> products) {
+//		this.products = products;
+//	}
 
 	
 	

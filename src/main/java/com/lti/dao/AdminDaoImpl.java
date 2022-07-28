@@ -10,8 +10,9 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import com.lti.entity.Admin;
+import com.lti.entity.Category;
+import com.lti.entity.ProductType;
 import com.lti.entity.Retailer;
-import com.lti.entity.RetailerDocs;
 
 @Repository
 public class AdminDaoImpl implements AdminDao {
@@ -19,11 +20,12 @@ public class AdminDaoImpl implements AdminDao {
 	@PersistenceContext
 	EntityManager em;
 
-//	@Transactional
-//	public Admin addOrUpdateAdmin(Admin admin) {
-//		Admin userPersisted = em.merge(admin);
-//		return userPersisted;
-//	}
+	
+	@Transactional
+	public Admin addOrUpdateAdmin(Admin admin) {
+		Admin userPersisted = em.merge(admin);
+		return userPersisted;
+	}
 
 	public boolean adminLogin(String username, String password) {
 
@@ -68,13 +70,6 @@ public class AdminDaoImpl implements AdminDao {
 	@Transactional
 	public Retailer approveReailer(Retailer retailer) {
 		return em.merge(retailer);
-//		String jpql="update Retailer a set a.isApproved=:val where retailerId=:rid";
-//		TypedQuery<Retailer> query = em.createQuery(jpql,Retailer.class);
-//		query.setParameter("val", true);
-//		query.setParameter("rid", retailerId);
-//		
-//		int result = query.executeUpdate();
-//		return result;
 	}
 
 	public Retailer searchRetailer(int retailerId) {
@@ -85,6 +80,46 @@ public class AdminDaoImpl implements AdminDao {
 	public void removeRetailer(int retailerId) {
 		Retailer retailer = em.find(Retailer.class,retailerId);
 		em.remove(retailer);
+	}
+
+	@Transactional
+	public Category addOrUpdateCategory(Category category) {
+		return em.merge(category);
+	}
+
+	@Transactional
+	public void removeCategory(int categoryId) {
+		Category c=findCategory(categoryId);
+		em.remove(c);
+		
+	}
+
+	public Category findCategory(int categoryId) {
+		return em.find(Category.class, categoryId);
+	}
+	@Transactional
+	public ProductType addOrUpdateProductType(ProductType productType) {
+		return em.merge(productType);
+	}
+
+	@Transactional
+	public void revoveProductType(ProductType productType) {
+		ProductType p=em.find(ProductType.class, productType);
+		em.remove(p);
+	}
+
+	
+
+	public ProductType findProducttype(int ptypeId) {
+		// TODO Auto-generated method stub
+		return em.find(ProductType.class, ptypeId);
+	}
+	
+	public List<Admin> viewadmins() {
+		String jpql="select a from Admin a";
+		TypedQuery<Admin> query=em.createQuery(jpql, Admin.class);
+		List<Admin> rdata = query.getResultList();
+		return rdata;
 	}
 	
 }

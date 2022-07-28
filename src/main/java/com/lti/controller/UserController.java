@@ -51,7 +51,7 @@ public class UserController {
 	
 	@PostMapping("/login")
 	public String login(@RequestBody LoginDto loginData) {
-		boolean res = userService.userLogin(loginData.getUserId(), loginData.getPassword());
+		boolean res = userService.userLogin(loginData.getId(), loginData.getPassword());
 		
 		return res?"Login successful":"User Id or Password is incorrect";
 	}

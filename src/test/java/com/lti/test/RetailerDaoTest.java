@@ -38,7 +38,7 @@ public class RetailerDaoTest {
 //	}
 	
 	@Test
-	public void addRetailerWithDocsTest() {
+	public void addRetailer() {
 		Retailer r = new Retailer();
 		r.setRetailerName("OPPO");
 		r.setPassword("123");
@@ -47,12 +47,6 @@ public class RetailerDaoTest {
 		r.setGstnNo("gstn9820");
 		r.setApproved(false);
 		
-		RetailerDocs retailerDocs = new RetailerDocs();
-		retailerDocs.setAddharCard("adhardoc");
-		retailerDocs.setPanCard("panDac");
-		retailerDocs.setRetailer(r);
-		
-		r.setRetailerdocs(retailerDocs);
 		if(dao.retailerExist(r.getEmail())){
 			System.out.println("Email Id exist");
 		}
@@ -94,6 +88,12 @@ public class RetailerDaoTest {
 
 		Retailer retailer= dao.addOrUpdate(r);
 		assertNotNull(retailer);
+	}
+	
+	@Test
+	public void viewProfileTest() {
+		Retailer r = dao.viewProfile(1025);
+		System.out.println(r.toString());
 	}
 	
 	

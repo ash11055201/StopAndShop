@@ -7,6 +7,7 @@ public interface RetailerDao {
 	
 	Retailer addOrUpdate(Retailer retailer);
 	RetailerDocs addDocumentsForRetailer(RetailerDocs retailerDocs);
+	Retailer viewProfile(int retailerId);
 	
 	Retailer login(int retailerId , String password);
 	boolean retailerExist(String email);

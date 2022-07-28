@@ -27,11 +27,11 @@ public class Customer {
 	@OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
 	List<CustomerAddress> address;
 	
-	@OneToOne(mappedBy = "customer")
-	Cart cart;
-	
-	@OneToOne(mappedBy = "customer")
-	Wishlist wishlist;
+//	@OneToOne(mappedBy = "customer")
+//	Cart cart;
+//	
+//	@OneToOne(mappedBy = "customer")
+//	Wishlist wishlist;
 
 	public int getCustomerId() {
 		return customerId;
@@ -81,22 +81,22 @@ public class Customer {
 		this.address = address;
 	}
 
-	public Cart getCart() {
-		return cart;
-	}
-
-	public void setCart(Cart cart) {
-		this.cart = cart;
-	}
-
-	public Wishlist getWishlist() {
-		return wishlist;
-	}
-
-	public void setWishlist(Wishlist wishlist) {
-		this.wishlist = wishlist;
-	}
-	
+//	public Cart getCart() {
+//		return cart;
+//	}
+//
+//	public void setCart(Cart cart) {
+//		this.cart = cart;
+//	}
+//
+//	public Wishlist getWishlist() {
+//		return wishlist;
+//	}
+//
+//	public void setWishlist(Wishlist wishlist) {
+//		this.wishlist = wishlist;
+//	}
+//	
 	
 	
 }

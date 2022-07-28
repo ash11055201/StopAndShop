@@ -59,6 +59,10 @@ public class RetailerDaoImpl implements RetailerDao {
 		else
 			return true;
 	}
+	public Retailer viewProfile(int retailerId) {
+		// TODO Auto-generated method stub
+		return em.find(Retailer.class, retailerId);
+	}
 	
 	
 }

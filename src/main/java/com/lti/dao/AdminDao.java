@@ -3,11 +3,14 @@ package com.lti.dao;
 import java.util.List;
 
 import com.lti.entity.Admin;
+import com.lti.entity.Category;
+import com.lti.entity.ProductType;
 import com.lti.entity.Retailer;
-import com.lti.entity.RetailerDocs;
 
 public interface AdminDao {
 
+	List<Admin> viewadmins() ;
+	Admin addOrUpdateAdmin(Admin admin);
 	boolean adminLogin(String username, String password);
 	
 	Retailer serachRetailer(int retailerId);
@@ -17,5 +20,15 @@ public interface AdminDao {
 	List<Retailer> nonApprovedRetailers();
 	Retailer approveReailer(Retailer retailer);
 	Retailer searchRetailer(int retailerId);
+	
 	void removeRetailer(int retailerId);
+	
+	Category addOrUpdateCategory(Category category);
+	void removeCategory(int categoryId);
+	Category findCategory(int categoryId);
+	
+	ProductType addOrUpdateProductType(ProductType productType);
+	void revoveProductType(ProductType productType);
+	ProductType findProducttype(int ptypeId);
+	
 }

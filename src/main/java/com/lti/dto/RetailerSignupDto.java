@@ -5,10 +5,17 @@ public class RetailerSignupDto {
 	String password;
 	String email;
 	String phoneNo;
-	String GstnNo;
 	String addharCard;
 	String panCard;
+	String gstnNo;
 	
+	
+	public String getGstnNo() {
+		return gstnNo;
+	}
+	public void setGstnNo(String gstnNo) {
+		this.gstnNo = gstnNo;
+	}
 	public String getRetailerName() {
 		return retailerName;
 	}
@@ -33,12 +40,7 @@ public class RetailerSignupDto {
 	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
-	public String getGstnNo() {
-		return GstnNo;
-	}
-	public void setGstnNo(String gstnNo) {
-		GstnNo = gstnNo;
-	}
+	
 	public String getAddharCard() {
 		return addharCard;
 	}

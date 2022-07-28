@@ -30,8 +30,8 @@ public class Retailer {
 	@OneToOne(mappedBy = "retailer",cascade = CascadeType.ALL)
 	RetailerDocs retailerdocs;
 	
-	@OneToMany(mappedBy = "retailer" , cascade = CascadeType.ALL)
-	List<Product> products;
+//	@OneToMany(mappedBy = "retailer" , cascade = CascadeType.ALL)
+//	List<Product> products;
 	
 	public RetailerDocs getRetailerdocs() {
 		return retailerdocs;

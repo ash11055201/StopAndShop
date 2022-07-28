@@ -2,13 +2,14 @@ package com.lti.dto;
 
 public class LoginDto {
 
-	int userId;
+	int id;
 	String password;
-	public int getUserId() {
-		return userId;
+
+	public int getId() {
+		return id;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getPassword() {
 		return password;
